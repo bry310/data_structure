@@ -63,11 +63,25 @@
 // }
 
 //WE want to evaluate expressions such as (+ 2 3), (+ (* 8 33) 9)
-
+void printStack(Stack* s){
+    long long n = s->top ;
+    for(long long i = 0; i <= n; i++){
+        printf("%d ", ((int*)s->data)[i] ); 
+    }
+    printf("\n");
+}
 
 int main(int argc, char *argv[])
 {
     Stack s = stackCreate(10,STACK_INT);
+    int a = 4;
+    int b = 5;
+    int k = 193;
+    stackPush(&s,&a);
+    stackPush(&s,&b);
+    stackPush(&s,&k);
+    printStack(&s);
+
     /*
     char  w[20];
     printf("Enter a word: \n");
